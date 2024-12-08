@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+</head>
+<body>
+<h1>Page de Connexion</h1>
+<form id="loginForm">
+    <label for="username">Nom d'utilisateur:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="button" onclick="validateLogin()">Se connecter</button>
+</form>
+<p id="loginMessage"></p>
+
+<script>
+    function validateLogin() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const loginMessage = document.getElementById('loginMessage');
+
+        if (username === "user" && password === "password") {
+            loginMessage.innerText = "Connexion réussie !";
+        } else {
+            loginMessage.innerText = "Nom d'utilisateur ou mot de passe incorrect.";
+        }
+    }
+</script>
+</body>
+</html>
